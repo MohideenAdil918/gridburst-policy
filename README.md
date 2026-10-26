@@ -1,6 +1,6 @@
 # GridBurst Privacy Policy
 
-Official public privacy policy webpage for **GridBurst: Doodle Notebook Puzzle** (`com.gridburst.puzzle`), published by **GameOrbit**.
+Official public privacy policy webpage for **GridBurst: Doodle Notebook Puzzle** (`com.gridburst.puzzle`), published by **Mohideen Adil**.
 
 - 🌐 **Live Policy URL**: [https://mohideenadil918.github.io/gridburst-policy/](https://mohideenadil918.github.io/gridburst-policy/)
 - 📄 **Direct File**: [https://mohideenadil918.github.io/gridburst-policy/privacy-policy.html](https://mohideenadil918.github.io/gridburst-policy/privacy-policy.html)
