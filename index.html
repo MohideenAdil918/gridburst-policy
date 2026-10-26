@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#FDF7EB">
+  <title>Privacy Policy — GridBurst: Doodle Notebook Puzzle</title>
+  <meta name="description" content="Official Privacy Policy for GridBurst: Doodle Notebook Puzzle (com.gridburst.puzzle), developed by GameOrbit.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="icon.webp">
+
+  <!-- Doodle & Playful Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Shantell+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FDF7EB;
+      --paper: #FFFDF6;
+      --paper-pure: #FFFFFF;
+      --ink: #4A3B2A;
+      --ink-soft: #7A6953;
+      --ink-faint: #B5A28A;
+      --line: #E8DAC0;
+      --line-blue: rgba(110, 135, 175, 0.12);
+
+      /* Crayon Palette */
+      --red: #FF5D5D;
+      --orange: #FF9F2E;
+      --yellow: #FFC93B;
+      --green: #43C86B;
+      --teal: #25C1C7;
+      --sky: #47AEF2;
+      --violet: #9E7BF2;
+      --pink: #FF73AE;
+
+      --shadow-ink: 4px 5px 0px rgba(74, 59, 42, 0.22);
+      --shadow-ink-sm: 2px 3px 0px rgba(74, 59, 42, 0.18);
+      --shadow-hover: 6px 8px 0px rgba(74, 59, 42, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Shantell Sans', 'Comic Sans MS', cursive, sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+      /* GridBurst Signature Graph Paper Background */
+      background-image:
+        linear-gradient(var(--line-blue) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, var(--line-blue) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 64px 16px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating Notebook Doodles */
+    .decor {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .doodle {
+      position: absolute;
+      opacity: 0.25;
+      animation: floaty 16s ease-in-out infinite;
+    }
+    .doodle svg {
+      width: 44px;
+      height: 44px;
+      stroke: var(--ink);
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .doodle.d1 { top: 6%; left: 4%; --rr: 12deg; animation-duration: 14s; }
+    .doodle.d2 { top: 18%; right: 5%; --rr: -15deg; animation-duration: 18s; }
+    .doodle.d3 { top: 48%; left: 3%; --rr: 20deg; animation-duration: 20s; }
+    .doodle.d4 { top: 72%; right: 4%; --rr: -8deg; animation-duration: 15s; }
+    .doodle.d5 { top: 88%; left: 6%; --rr: 10deg; animation-duration: 17s; }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(var(--rr, 0deg)); }
+      50% { transform: translateY(-18px) rotate(calc(var(--rr, 0deg) + 12deg)); }
+    }
+
+    /* Outer Wrapper */
+    .doc-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 860px;
+    }
+
+    /* Notebook Spine / Header Banner */
+    .notebook-header {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: 25px 255px 20px 225px / 225px 20px 255px 25px;
+      box-shadow: var(--shadow-ink);
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-clip: padding-box;
+    }
+
+    /* Spiral Binder Holes Graphic */
+    .notebook-rings {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      position: absolute;
+      top: -14px;
+      left: 0;
+      right: 0;
+    }
+    .ring {
+      width: 14px;
+      height: 24px;
+      background: #E0D3BC;
+      border: 2.5px solid var(--ink);
+      border-radius: 10px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .app-icon-wrapper {
+      position: relative;
+    }
+    .app-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      border: 2.8px solid var(--ink);
+      box-shadow: var(--shadow-ink-sm);
+      background: #FFF;
+      display: block;
+      object-fit: cover;
+    }
+    .icon-badge {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: var(--orange);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border: 1.8px solid var(--ink);
+      border-radius: 10px;
+    }
+
+    .app-title-group h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .burst-text {
+      color: var(--orange);
+      text-shadow: 1px 1px 0 var(--ink);
+    }
+
+    .app-meta {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+    .badge-pill {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1.8px solid var(--ink);
+      background: var(--yellow);
+      color: var(--ink);
+    }
+    .badge-pill.verified {
+      background: #D5F7E0;
+      color: #176B38;
+      border-color: #176B38;
+    }
+
+    /* Actions Bar */
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-doodle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--paper-pure);
+      border: 2.2px solid var(--ink);
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: var(--shadow-ink-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-doodle:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-ink);
+      background: #FFF9E6;
+    }
+    .btn-doodle.primary {
+      background: var(--green);
+      color: #FFF;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+    .btn-doodle.primary:hover {
+      background: #38b65e;
+    }
+
+    /* Fast Navigation Sticky Pill Bar */
+    .nav-bar {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 10px 4px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .nav-bar::-webkit-scrollbar {
+      height: 4px;
+    }
+    .nav-bar::-webkit-scrollbar-thumb {
+      background: var(--line);
+      border-radius: 4px;
+    }
+    .nav-pill {
+      white-space: nowrap;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--paper);
+      padding: 6px 14px;
+      border: 2px solid var(--ink);
+      border-radius: 20px;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: all 0.15s;
+    }
+    .nav-pill:hover {
+      background: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+    /* Paper Sheets / Content Cards */
+    .paper-sheet {
+      background: var(--paper);
+      border: 2.8px solid var(--ink);
+      border-radius: 20px;
+      box-shadow: var(--shadow-ink);
+      padding: 30px 28px;
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    /* Wobbly Sketch Borders for Alternating Cards */
+    .sk-1 { border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px; }
+    .sk-2 { border-radius: 25px 255px 25px 225px / 225px 25px 255px 25px; }
+    .sk-3 { border-radius: 35px 235px 25px 245px / 245px 25px 235px 35px; }
+
+    /* Decorative Tape Sticker */
+    .tape {
+      position: absolute;
+      top: -12px;
+      left: 36px;
+      width: 90px;
+      height: 22px;
+      background: rgba(255, 235, 160, 0.75);
+      border: 1px dashed rgba(74, 59, 42, 0.4);
+      transform: rotate(-3deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      pointer-events: none;
+    }
+
+    /* Card Titles */
+    .sheet-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px dashed var(--line);
+      padding-bottom: 10px;
+    }
+    .sheet-title .emoji {
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 18px 0 8px 0;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #3f3120;
+    }
+
+    ul {
+      margin: 10px 0 16px 24px;
+      color: #3f3120;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    li strong {
+      color: var(--ink);
+    }
+
+    /* Highlight Sticky Notes */
+    .sticky-note {
+      background: #FFF8D9;
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 16px 0;
+      box-shadow: 3px 3px 0 var(--ink);
+      position: relative;
+    }
+    .sticky-note.green {
+      background: #E8F9EE;
+      border-color: #248A47;
+    }
+    .sticky-note.blue {
+      background: #E7F4FE;
+      border-color: #1971C2;
+    }
+
+    /* Tables for Data Collection Disclosures */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 2.2px solid var(--ink);
+      border-radius: 12px;
+      background: #FFF;
+      box-shadow: var(--shadow-ink-sm);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+    th {
+      background: #F4EBD7;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--ink);
+      color: var(--ink);
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #EEDFC3;
+      vertical-align: top;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* SDK Link Badge */
+    .sdk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      background: #F0F4FF;
+      color: #234EBA;
+      border: 1.5px solid #234EBA;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .sdk-badge:hover {
+      background: #DBE5FF;
+    }
+
+    /* Contact Box */
+    .contact-card {
+      background: #FFFDF9;
+      border: 2.5px solid var(--ink);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 14px;
+      box-shadow: var(--shadow-ink-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .contact-item a {
+      color: #1971C2;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    footer a {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--yellow);
+      border: 2.5px solid var(--ink);
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-ink-sm);
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.2s;
+      z-index: 99;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: var(--shadow-ink);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 10px 48px 10px;
+      }
+      .notebook-header {
+        padding: 22px 16px;
+      }
+      .paper-sheet {
+        padding: 22px 18px;
+      }
+      .brand-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-actions {
+        width: 100%;
+      }
+      .btn-doodle {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Notebook Doodles -->
+  <div class="decor" aria-hidden="true">
+    <div class="doodle d1">
+      <svg viewBox="0 0 24 24"><path d="M12 2.5l2.6 6.2 6.7.6-5 4.4 1.5 6.6L12 16.8l-5.8 3.5 1.5-6.6-5-4.4 6.7-.6z"/></svg>
+    </div>
+    <div class="doodle d2">
+      <svg viewBox="0 0 24 24"><path d="M2 12q3-9 6 0t6 0t6 0t6 0"/></svg>
+    </div>
+    <div class="doodle d3">
+      <svg viewBox="0 0 24 24"><path d="M12 20.2C5.2 14.6 3.1 10 6.1 7.4a4.1 4.1 0 0 1 5.9.9 4.1 4.1 0 0 1 5.9-.9c3 2.6.9 7.2-5.9 12.8z"/></svg>
+    </div>
+    <div class="doodle d4">
+      <svg viewBox="0 0 24 24"><path d="M3 7l4 11 4-11 4 11 4-11"/></svg>
+    </div>
+    <div class="doodle d5">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+    </div>
+  </div>
+
+  <div class="doc-container">
+
+    <!-- Top Notebook Binder Card -->
+    <header class="notebook-header" id="top">
+      <div class="notebook-rings" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </div>
+
+      <div class="brand-row">
+        <div class="brand-left">
+          <div class="app-icon-wrapper">
+            <img src="icon.webp" alt="GridBurst App Icon" class="app-icon" onerror="this.src='https://raw.githubusercontent.com/MohideenAdil918/gridburst/master/gridburst_android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp';">
+            <span class="icon-badge">100% Offline</span>
+          </div>
+          <div class="app-title-group">
+            <h1>Grid<span class="burst-text">Burst!</span> Privacy Policy</h1>
+            <div class="app-meta">
+              <span>App ID: <code>com.gridburst.puzzle</code></span>
+              <span>•</span>
+              <span>Publisher: <strong>GameOrbit</strong></span>
+              <span class="badge-pill verified">✔ Store Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a href="https://play.google.com/store/apps/details?id=com.gridburst.puzzle" target="_blank" rel="noopener" class="btn-doodle primary">
+            <span>⚡ Google Play Store</span>
+          </a>
+          <button onclick="window.print()" class="btn-doodle">
+            <span>🖨️ Print / PDF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Navigation Bar -->
+    <nav class="nav-bar" aria-label="Privacy Policy Sections">
+      <a href="#overview" class="nav-pill">📝 Overview</a>
+      <a href="#data-collection" class="nav-pill">📊 Data We Collect</a>
+      <a href="#admob-third-parties" class="nav-pill">📢 Ads & SDKs</a>
+      <a href="#children" class="nav-pill">🧸 Children's Privacy</a>
+      <a href="#account-deletion" class="nav-pill">🗑️ Data Deletion</a>
+      <a href="#rights" class="nav-pill">⚖️ Your Rights</a>
+      <a href="#contact" class="nav-pill">📬 Contact Us</a>
+    </nav>
+
+    <!-- Section 1: Overview -->
+    <section class="paper-sheet sk-1" id="overview">
+      <div class="tape" aria-hidden="true"></div>
+      <h2 class="sheet-title"><span class="emoji">✏️</span> 1. Overview & Commitment</h2>
+      <p>
+        Welcome to <strong>GridBurst: Doodle Notebook Puzzle</strong> ("GridBurst", "the App", "we", "us", or "our"), operated by <strong>GameOrbit</strong>.
+      </p>
+      <p>
+        Your privacy is paramount to us. GridBurst is designed as an <strong>offline-first, lightweight casual block puzzle game</strong>. You can enjoy the full puzzle experience without ever creating an account or providing sensitive personal information.
+      </p>
+      <div class="sticky-note green">
+        <strong>💡 Key Privacy Principle:</strong> We do not sell your personal data. We do not track you across unrelated third-party apps. Any data handled is strictly used to deliver gameplay, ensure fair high-score verification, and display advertisements through trusted industry partners (Google AdMob).
+      </div>
+      <p>
+        <em>Effective Date: October 26, 2026 • Last Updated: October 26, 2026</em>
+      </p>
+    </section>
+
+    <!-- Section 2: Data We Collect -->
+    <section class="paper-sheet sk-2" id="data-collection">
+      <h2 class="sheet-title"><span class="emoji">📋</span> 2. Information We Collect and Process</h2>
+
+      <h3>A. Information You Provide Directly</h3>
+      <ul>
+        <li><strong>Optional Google Sign-In:</strong> If you choose to link your Google Account for cross-device cloud sync and global leaderboards, we receive your public display name, email address, and avatar URL via Google Credential Manager.</li>
+        <li><strong>Customer Support Inquiries:</strong> If you email our support team, we receive your email address and any feedback or bug descriptions you choose to submit.</li>
+      </ul>
+
+      <h3>B. Information Stored Locally on Your Device</h3>
+      <p>
+        GridBurst stores all core game data locally inside your device's internal application storage:
+      </p>
+      <ul>
+        <li>Current board matrix, high scores, and combo streaks.</li>
+        <li>Inventory counts of power-up tools (Eraser, Rotate, Bomb, Refresh).</li>
+        <li>Sound, vibration, theme settings, and VIP/ad-free unlocked state.</li>
+      </ul>
+
+      <h3>C. Information Automatically Processed</h3>
+      <div class="data-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>Examples</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Device & OS Identifiers</strong></td>
+              <td>Device manufacturer, model, Android OS version, display resolution.</td>
+              <td>Ensure 120 FPS hardware rendering, correct screen scaling, and bug diagnosis.</td>
+            </tr>
+            <tr>
+              <td><strong>Advertising ID (GAID)</strong></td>
+              <td>Google Advertising ID (can be reset in Android Settings).</td>
+              <td>Deliver rewarded video ads, banners, and app-open ads via Google AdMob.</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Cheat Telemetry</strong></td>
+              <td>Total game moves, final score hash, run elapsed duration.</td>
+              <td>Validated by our serverless Cloudflare Edge Worker to prevent fraudulent leaderboard scores.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: Third-Party Services & SDKs -->
+    <section class="paper-sheet sk-3" id="admob-third-parties">
+      <h2 class="sheet-title"><span class="emoji">🧩</span> 3. Third-Party Services & Advertisements</h2>
+      <p>
+        To keep GridBurst free for everyone, we partner with industry-standard third-party providers. These services may collect information as described in their respective privacy policies:
+      </p>
+
+      <h3>Google AdMob (Mobile Ads)</h3>
+      <p>
+        GridBurst displays banner ads, interstitial transitions, app-open ads, and voluntary rewarded video ads (e.g. to earn game tools or revive a lost match) via Google AdMob.
+      </p>
+      <ul>
+        <li>AdMob may collect advertising identifiers, IP addresses, and diagnostic crash data to serve contextually relevant ads and prevent click fraud.</li>
+        <li>You can manage or opt out of personalized advertising at any time on your Android device: <em>Settings > Google > Ads > Delete or Reset Advertising ID</em>.</li>
+        <li>
+          Learn more:
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" class="sdk-badge">Google Ads Policy ↗</a>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="sdk-badge">Google Privacy Policy ↗</a>
+        </li>
+      </ul>
+
+      <h3>Google Play In-App Billing</h3>
+      <p>
+        Optional purchases (such as the Permanent VIP Pass or tool packs) are processed directly by the <strong>Google Play Store</strong>. We never receive or store your credit card, bank details, or billing addresses.
+      </p>
+
+      <h3>Cloudflare Edge Infrastructure</h3>
+      <p>
+        Our lightweight high-score validation and anonymous cloud backup run on Cloudflare Workers and D1 Database. Data is processed securely in transit using modern TLS 1.3 encryption.
+      </p>
+    </section>
+
+    <!-- Section 4: Children's Privacy -->
+    <section class="paper-sheet sk-1" id="children">
+      <h2 class="sheet-title"><span class="emoji">🧸</span> 4. Children’s Privacy (COPPA Compliance)</h2>
+      <p>
+        GridBurst is a casual, family-friendly doodle puzzle. Protecting children’s privacy is extremely important to us:
+      </p>
+      <ul>
+        <li>We do not knowingly collect personal identifiable information from children under the age of <strong>13</strong> (or under 16 in the European Union).</li>
+        <li>GridBurst ad configurations honor Google Play’s Families Policy and COPPA regulations. Where applicable, ads are requested with neutral, non-personalized configurations.</li>
+        <li>If a parent or guardian becomes aware that their child has provided us with personal information without parental consent, please contact us at <a href="mailto:admin@gameorbit.com">admin@gameorbit.com</a>, and we will promptly delete the data from our servers.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5: Data Deletion & Account Erasure -->
+    <section class="paper-sheet sk-2" id="account-deletion">
+      <h2 class="sheet-title"><span class="emoji">🗑️</span> 5. Data Retention & Account Deletion</h2>
+      <div class="sticky-note blue">
+        <strong>Google Play Policy Compliance:</strong> You have the unconditional right to request the deletion of all data associated with your game account at any time.
+      </div>
+      <p>
+        Because GridBurst does not require account creation, most data is stored exclusively on your own phone. Here is how you can erase everything:
+      </p>
+      <ul>
+        <li><strong>On Your Device:</strong> Simply uninstall the app or go to <em>Android Settings > Apps > GridBurst > Storage & Cache > Clear Storage</em>. This immediately erases all scores, offline saves, and settings.</li>
+        <li><strong>Cloud Leaderboards & Synced Profiles:</strong> To delete any synced leaderboard scores, Google-linked cloud profiles, or support records from our database, send an email to <a href="mailto:admin@gameorbit.com">admin@gameorbit.com</a> with the subject line <code>"Delete My GridBurst Data"</code>. We process all deletion requests within <strong>48 hours</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- Section 6: User Rights (GDPR & CCPA) -->
+    <section class="paper-sheet sk-3" id="rights">
+      <h2 class="sheet-title"><span class="emoji">⚖️</span> 6. Your Rights (GDPR, CCPA & Global)</h2>
+      <p>Depending on your jurisdiction, you possess the following privacy rights:</p>
+      <ul>
+        <li><strong>Right to Know & Access:</strong> The right to request what personal data (if any) we hold about you.</li>
+        <li><strong>Right to Erasure / "Right to Be Forgotten":</strong> The right to demand that your data be permanently removed.</li>
+        <li><strong>Right to Non-Discrimination:</strong> We will never degrade your gameplay, limit levels, or charge different prices for exercising your privacy rights.</li>
+        <li><strong>California Privacy (CCPA/CPRA):</strong> We do not sell or share personal information as defined under California law.</li>
+      </ul>
+    </section>
+
+    <!-- Section 7: Security & Changes -->
+    <section class="paper-sheet sk-1">
+      <h2 class="sheet-title"><span class="emoji">🔒</span> 7. Data Security & Policy Updates</h2>
+      <p>
+        We employ industry-standard encryption (HTTPS/TLS) for any network requests between the game and our verification servers. While no system can guarantee 100% invulnerability, we minimize risk by simply not collecting unnecessary sensitive information.
+      </p>
+      <p>
+        We may update this Privacy Policy from time to time to reflect game enhancements or legal requirements. Any modifications will be posted here with an updated "Last Updated" timestamp.
+      </p>
+    </section>
+
+    <!-- Section 8: Contact -->
+    <section class="paper-sheet sk-2" id="contact">
+      <h2 class="sheet-title"><span class="emoji">📬</span> 8. Contact & Developer Information</h2>
+      <p>
+        If you have questions, feedback, or data requests regarding this Privacy Policy, our team is always ready to assist:
+      </p>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <span>🎮 <strong>Developer / Publisher:</strong> GameOrbit (Mohideen Adil)</span>
+        </div>
+        <div class="contact-item">
+          <span>📦 <strong>Application ID:</strong> <code>com.gridburst.puzzle</code></span>
+        </div>
+        <div class="contact-item">
+          <span>✉️ <strong>Official Privacy Email:</strong> <a href="mailto:admin@gameorbit.com">admin@gameorbit.com</a></span>
+        </div>
+        <div class="contact-item">
+          <span>🌐 <strong>GitHub Repository:</strong> <a href="https://github.com/MohideenAdil918/gridburst" target="_blank" rel="noopener">MohideenAdil918/gridburst</a></span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 <strong>GameOrbit</strong>. All rights reserved.</p>
+      <p>
+        <a href="https://play.google.com/store/apps/details?id=com.gridburst.puzzle" target="_blank" rel="noopener">GridBurst: Doodle Notebook Puzzle on Google Play</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Back to Top Doodle Button -->
+  <a href="#top" class="back-to-top" title="Back to top" aria-label="Back to top">↑</a>
+
+</body>
+</html>
